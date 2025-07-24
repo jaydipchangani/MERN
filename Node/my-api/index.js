@@ -1,42 +1,68 @@
+require('dotenv').config();
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
+
 app.use(express.json());
 
-let users = [
-    { id: 1, name: "Jay" },
-    { id: 2, name: "Patel" },
-    { id: 3, name: "John" },
-    { id: 4, name: "Doe" }
-];
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log('✅ Connected to MongoDB Atlas');
+}).catch((err) => {
+    console.error('❌ MongoDB connection error:', err);
+});
 
-app.get('/api/users', (req, res) => {
+const User = require('./models/User');
+
+// GET all users
+app.get('/api/users', async (req, res) => {
+    const users = await User.find();
     res.json(users);
 });
 
-app.get('/api/users/:id', (req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if (!user) return res.status(404).send('User not found');
-    res.json(user);
+// GET one user
+app.get('/api/users/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) return res.status(404).send("User not found");
+        res.json(user);
+    } catch (err) {
+        res.status(400).send("Invalid ID");
+    }
 });
 
-app.post('/api/users', (req, res) => {
-    const newUser = { id: users.length + 1, name: req.body.name };
-    users.push(newUser);
-    res.status(201).json(newUser);
+// POST create user
+app.post('/api/users', async (req, res) => {
+    const user = new User({ name: req.body.name });
+    await user.save();
+    res.status(201).json(user);
 });
 
-app.put('/api/users/:id', (req, res) => {
-    const user = users.find(u => u.id === parseInt(req.params.id));
-    if (!user) return res.status(404).send('User not found');
-    user.name = req.body.name;
-    res.json(user);
+// PUT update user
+app.put('/api/users/:id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            { name: req.body.name },
+            { new: true }
+        );
+        if (!user) return res.status(404).send("User not found");
+        res.json(user);
+    } catch (err) {
+        res.status(400).send("Invalid ID");
+    }
 });
 
-app.delete('/api/users/:id', (req, res) => {
-    const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
-    if (userIndex === -1) return res.status(404).send('User not found');
-    const deletedUser = users.splice(userIndex, 1);
-    res.json(deletedUser);
+// DELETE user
+app.delete('/api/users/:id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        if (!user) return res.status(404).send("User not found");
+        res.json(user);
+    } catch (err) {
+        res.status(400).send("Invalid ID");
+    }
 });
-
-app.listen(3000, () => console.log("Server running on port 3000"));
