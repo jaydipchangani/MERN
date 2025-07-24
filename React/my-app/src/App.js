@@ -1,7 +1,7 @@
 import './App.css';
 import ThemeToggle from './components/ThemeToggle';
 import Timer from './components/Timer';
-
+import UseStatePractice from './components/UseStatePractice';
 
 function App() {
   
@@ -9,6 +9,7 @@ function App() {
 <>
     <ThemeToggle/>
     <Timer/>
+    <UseStatePractice/>
     </>
   );
 }
