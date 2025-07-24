@@ -1,5 +1,6 @@
 import './App.css';
 import ThemeToggle from './components/ThemeToggle';
+import Timer from './components/Timer';
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   return (
 <>
     <ThemeToggle/>
-
+    <Timer/>
     </>
   );
 }
