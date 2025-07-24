@@ -1,33 +1,30 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
-  const[counter,setCounter]= useState(0);
-
-  function increase()
-  {
-    setCounter(counter+1)
-  }
-
-  function decrease()
-  {
-    setCounter(counter-1)
-  }
-
-  function zero()
-  {
-    setCounter(0)
-  }
+  const [user,setUser] = useState([])
   
+  /*
+  useEffect(()=>{
+    fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(res=>res.json() )
+    .then(data=> {setUser(data); console.log(data);} )
+    .catch(err=> console.log(err))
+  },[])
+  */
+
+  useEffect(()=>{
+    axios.get('https://jsonplaceholder.typicode.com/todos')
+    .then(res=>setUser(res.data))
+    .catch(err=> console.log(err))
+  },[])
 
   return (
     <div >
-      <h3>Counter: {counter}</h3>
-
-      <button onClick={increase}>Increase Value</button>
-      <button onClick={decrease}>Decrease Value</button>
-      <button onClick={zero}>Zero Value</button>
+      <h3>User Data</h3>
+    {user.map(u => <li key={u.id}>{u.title}</li>)}
     </div>
   );
 }
