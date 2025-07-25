@@ -2,6 +2,7 @@ import './App.css';
 import ThemeToggle from './components/ThemeToggle';
 import Timer from './components/Timer';
 import UseStatePractice from './components/UseStatePractice';
+import TwFive from './components/TwFive';
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <ThemeToggle/>
     <Timer/>
     <UseStatePractice/>
+    <TwFive/>
     </>
   );
 }
