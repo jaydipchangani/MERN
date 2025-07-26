@@ -5,6 +5,7 @@ import UseStatePractice from './components/UseStatePractice';
 import TwFive from './components/TwFive';
 import UseContextExample from './components/UseContextExample';
 import UseReducerCount from './components/useReducerCount';
+import NewApp from './useReducer/App';
 
 function App() {
   
@@ -14,8 +15,9 @@ function App() {
     <Timer/>
     <UseStatePractice/>
     <TwFive/>
-    <UseContextExample/>*/}
-    <UseReducerCount/>
+    <UseContextExample/>
+    <UseReducerCount/>*/}
+    <NewApp/>
     </>
   );
 }
