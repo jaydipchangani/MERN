@@ -6,6 +6,7 @@ import TwFive from './components/TwFive';
 import UseContextExample from './components/UseContextExample';
 import UseReducerCount from './components/useReducerCount';
 import NewApp from './useReducer/App';
+import CustomeHook from './CustomeHooks/App'
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
     <UseContextExample/>
     <UseReducerCount/>*/}
     <NewApp/>
+    <CustomeHook/>
+
     </>
   );
 }

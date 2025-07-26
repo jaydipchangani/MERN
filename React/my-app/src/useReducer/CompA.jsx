@@ -10,7 +10,8 @@ export default function CompA() {
       
       <button onClick={()=> useCon.dispatch({type:"dec"})}>DECREMENT</button>
       
-      <button onClick={()=> useCon.dispatch({type:"reset"})}>RESET</button>
+      <button onClick={()=> useCon.dispatch({type:"reset"})}>RESET</button> 
+      {useCon.count}
     </div>
   ) 
 }
