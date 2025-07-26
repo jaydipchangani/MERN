@@ -59,7 +59,7 @@ function UseStatePractice()
     return(
         <>
             <form>
-                <input type="text" value={query} onChange={(e)=>setQuery(e.target.value)}/>
+                <input type="text" value={query}    onChange={(e)=>setQuery(e.target.value)}/>
             </form>
 
             <ul>

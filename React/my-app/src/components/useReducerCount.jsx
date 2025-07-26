@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 
 function useReducerCount() {
     const[count,dispatch]=useReducer(reducer,0);
@@ -19,6 +19,17 @@ function useReducerCount() {
         }
     }
 
+    const[task,setTask]=useState("")
+    const[taskList,setTaskList]=useState([])
+    const handleAddTask =()=>
+    {   if(task.trim() ==="") return
+        setTaskList([...taskList,task])
+        setTask('')
+    }
+    const handleDeleteTask =(i)=>
+    {  setTaskList(prev => prev.filter((_, idx) => idx !== i));
+    }
+
   return (
     <div>
       <h1>Example of UseReducer</h1>
@@ -28,6 +39,14 @@ function useReducerCount() {
       <button onClick={()=> dispatch({type:"dec"})}>DECREMENT</button>
       
       <button onClick={()=> dispatch({type:"reset"})}>RESET</button>
+
+      <h1>To Do Application</h1>
+        <input type='text' onChange={(e)=>setTask(e.target.value)} placeholder='Add your Task'/>
+        <button onClick={handleAddTask}>Add</button>
+        <br/>
+    <ul>
+        {taskList.map((t,index) => (<li key={index}>{t} <button onClick={()=> handleDeleteTask(index)}>Remove</button></li>))}
+    </ul>
     </div>
   )
 }
