@@ -8,6 +8,7 @@ import UseReducerCount from './components/useReducerCount';
 import NewApp from './useReducer/App';
 import CustomeHook from './CustomeHooks/App'
 import UseMemo from './UseMemo/App';
+import UseCallback  from './UseCallback/App';
 
 function App() {
   
@@ -20,8 +21,10 @@ function App() {
     <UseContextExample/>
     <UseReducerCount/>
     <NewApp/>
-    <CustomeHook/>*/}
-      <UseMemo/>
+    <CustomeHook/>
+      <UseMemo/>*/}
+
+      <UseCallback />
     </>
   );
 }
