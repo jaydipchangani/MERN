@@ -7,6 +7,7 @@ import UseContextExample from './components/UseContextExample';
 import UseReducerCount from './components/useReducerCount';
 import NewApp from './useReducer/App';
 import CustomeHook from './CustomeHooks/App'
+import UseMemo from './UseMemo/App';
 
 function App() {
   
@@ -17,10 +18,10 @@ function App() {
     <UseStatePractice/>
     <TwFive/>
     <UseContextExample/>
-    <UseReducerCount/>*/}
+    <UseReducerCount/>
     <NewApp/>
-    <CustomeHook/>
-
+    <CustomeHook/>*/}
+      <UseMemo/>
     </>
   );
 }
