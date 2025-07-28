@@ -9,6 +9,9 @@ import NewApp from './useReducer/App';
 import CustomeHook from './CustomeHooks/App'
 import UseMemo from './UseMemo/App';
 import UseCallback  from './UseCallback/App';
+import Redux from './Redux/App.jsx';
+import {Provider} from 'react-redux'
+import {store} from './Redux/store.js'
 
 function App() {
   
@@ -22,9 +25,11 @@ function App() {
     <UseReducerCount/>
     <NewApp/>
     <CustomeHook/>
-      <UseMemo/>*/}
-
-      <UseCallback />
+      <UseMemo/>
+      <UseCallback /> */}
+      <Provider store={store}>
+        <Redux />
+      </Provider>
     </>
   );
 }
