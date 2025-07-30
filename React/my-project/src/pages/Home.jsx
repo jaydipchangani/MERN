@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 function Home() {
   return (
@@ -11,7 +12,7 @@ function Home() {
           Software Developer
         </div>
 
-        <div className=" flex justify-start items-end text-1xl mt-10 ml-20 bg-green-500 w-1/2">
+        <div className=" flex justify-start items-end text-1xl mt-5 ml-20 bg-green-500 w-1/2">
           I build accessible, pixel-perfect digital experiences for the web.
         </div>
 
@@ -22,12 +23,26 @@ function Home() {
             <li className="my-3 tracking-wider hover:ml-5 cursor-pointer">PROJECTS</li>
          </ul>
         </div>
+
+        <div className="flex bg-green-300 ml-20 mt-10">
+        <div className="flex space-x-4 mt-6">
+       
+        <a href="https://github.com/jaydipchangani" target="_blank" >
+            <FaGithub className="text-3xl text-gray-700 hover:text-black transition" />
+        </a>
+
+        <a href="https://linkedin.com/in/jaydip-changani" target="_blank">
+            <FaLinkedin className="text-3xl text-gray-700 hover:text-gray-900 transition" />
+        </a>
+
+    </div>
+        </div>
       </div>
 
       <div className="w-2/3 overflow-y-auto bg-red-300 hover:bg-blue-200 transition-all duration-900">
-        <div class="h-[1000px]">Content 1...</div>
-        <div class="h-[1000px]">Content 2...</div>
-        <div class="h-[1000px]">Content 3...</div>
+        <div className="h-[1000px]">Content 1...</div>
+        <div className="h-[1000px]">Content 2...</div>
+        <div className="h-[1000px]">Content 3...</div>
       </div>
     </div>
   );
