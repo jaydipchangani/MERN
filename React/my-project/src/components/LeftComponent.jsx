@@ -17,13 +17,13 @@ function LeftComponent() {
 
       <div className="flex justify-start items-end mt-10 ml-20 bg-yellow-500 w-1/2">
         <ul>
-          <li className="my-3 tracking-wider hover:ml-5 cursor-pointer ">
+          <li className="my-3 tracking-wider font-normal hover:font-bold  cursor-pointer  ">
             ABOUT
           </li>
-          <li className="my-3 tracking-wider hover:ml-5 cursor-pointer">
+          <li className="my-3 tracking-wider hover:font-bold  cursor-pointer">
             EXPERIENCE
           </li>
-          <li className="my-3 tracking-wider hover:ml-5 cursor-pointer">
+          <li className="my-3 tracking-wider hover:font-bold cursor-pointer">
             PROJECTS
           </li>
         </ul>
