@@ -12,6 +12,7 @@ import UseCallback  from './UseCallback/App';
 import Redux from './Redux/App.jsx';
 import {Provider} from 'react-redux'
 import {store} from './Redux/store.js'
+import Temp from './Practice/Temp.jsx';
 
 function App() {
   
@@ -26,10 +27,11 @@ function App() {
     <NewApp/>
     <CustomeHook/>
       <UseMemo/>
-      <UseCallback /> */}
+      <UseCallback /> 
       <Provider store={store}>
         <Redux />
-      </Provider>
+      </Provider>*/}
+      <Temp />
     </>
   );
 }
