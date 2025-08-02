@@ -11,6 +11,7 @@ function ToggleButton() {
 
         <p style={ {display : isToggled === false ? 'none' : 'inline'}}>Hello there</p>
       
+      {isToggled && <p>Using &&</p>}
     </div>
   )
 }
