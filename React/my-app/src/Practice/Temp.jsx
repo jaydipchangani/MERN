@@ -3,6 +3,7 @@ import ToDo from "./useState/ToDo"
 import ToggleButton from "./useState/ToggleButton"
 import UserDetailForm from "./useState/UserDetailForm"
 import API from "./useEffect/API"
+import Clock from "./useEffect/Clock"
 function Temp() {
     
   return (
@@ -12,7 +13,10 @@ function Temp() {
     <ToDo/>
     <ToggleButton/>
     <UserDetailForm/>*/}
-      <API/>
+    {/*<API/>*/}
+
+      <Clock/>
+
     </div>
   )
 }
