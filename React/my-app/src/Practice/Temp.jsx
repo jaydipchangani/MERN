@@ -6,6 +6,7 @@ import API from "./useEffect/API"
 import Clock from "./useEffect/Clock"
 import Window from "./useEffect/Window"
 import TypingEffext from "./useEffect/TypingEffext"
+import FormSave from "./useEffect/FormSave"
 function Temp() {
     
   return (
@@ -15,10 +16,9 @@ function Temp() {
     <ToDo/>
     <ToggleButton/>
     <UserDetailForm/>*/}
-    {/*<API/> <Clock/> <Window/>*/}
-
-    <TypingEffext text="Hello There my name is test" speed={100}/>      
-
+    {/*<API/> <Clock/> <Window/>
+    <TypingEffext text="Hello There my name is test" speed={100}/>   */}   
+      <FormSave/>
     </div>
   )
 }
