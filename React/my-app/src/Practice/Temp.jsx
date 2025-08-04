@@ -2,15 +2,17 @@ import CounterApp from "./useState/CounterApp"
 import ToDo from "./useState/ToDo"
 import ToggleButton from "./useState/ToggleButton"
 import UserDetailForm from "./useState/UserDetailForm"
+import API from "./useEffect/API"
 function Temp() {
     
   return (
     
     <div>
-    <CounterApp/>
+    { /*<CounterApp/>
     <ToDo/>
     <ToggleButton/>
-    <UserDetailForm/>
+    <UserDetailForm/>*/}
+      <API/>
     </div>
   )
 }
