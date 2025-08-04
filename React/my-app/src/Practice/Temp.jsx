@@ -4,6 +4,7 @@ import ToggleButton from "./useState/ToggleButton"
 import UserDetailForm from "./useState/UserDetailForm"
 import API from "./useEffect/API"
 import Clock from "./useEffect/Clock"
+import Window from "./useEffect/Window"
 function Temp() {
     
   return (
@@ -13,9 +14,9 @@ function Temp() {
     <ToDo/>
     <ToggleButton/>
     <UserDetailForm/>*/}
-    {/*<API/>*/}
+    {/*<API/> <Clock/>*/}
 
-      <Clock/>
+      <Window/>
 
     </div>
   )
