@@ -7,6 +7,7 @@ import Clock from "./useEffect/Clock"
 import Window from "./useEffect/Window"
 import TypingEffext from "./useEffect/TypingEffext"
 import FormSave from "./useEffect/FormSave"
+import WeatherForcast from "./useEffect/WeatherForcast"
 function Temp() {
     
   return (
@@ -18,7 +19,7 @@ function Temp() {
     <UserDetailForm/>*/}
     {/*<API/> <Clock/> <Window/>
     <TypingEffext text="Hello There my name is test" speed={100}/>   */}   
-      <FormSave/>
+     <WeatherForcast/>
     </div>
   )
 }
